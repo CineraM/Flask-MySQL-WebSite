@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+{% extends 'base.html' %}
+{% block title %}
+Home Page
+{% endblock %}
 
-<head>
-  <meta charset="utf-8">
-  <title></title>
-</head>
-
-<body>
-  {% for item in results %}
-  <h1>{{item}}</h1>
-  {%endfor%}
-</body>
-
-</html>
+{% block content %}
+This is our content for the Home Page
+{% endblock %}

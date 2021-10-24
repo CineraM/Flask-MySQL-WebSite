@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Register Page
+{% endblock %}
+
+{% block content %}
+
+<body class="text-center">
+  <br>
+  <div class="container">
+    <form class="form-register" style="color:white" method="post">
+      <img class="rounded-circle"
+        src="data:image/png;base64,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"
+        alt="">
+      <h1 class="h1 mb-3 font-weight-normal">
+        Register as a Member
+      </h1>
+      <br>
+      <form class="form-register" style="color:white" action="users.html" method="post">
+        <input class="form-control" placeholder="User name" name='username'>
+        <br>
+        <input class="form-control" placeholder="Password" name='password'>
+        <br>
+        <input class="form-control" placeholder="First Name" name='firstname'>
+        <br>
+        <input class="form-control" placeholder="Last Name" name='lastname'>
+        <br>
+        <input class="form-control" placeholder="Year" name='year'>
+        <br>
+        <input class="form-control" placeholder="Month" name='month'>
+        <br>
+        <input class="form-control" placeholder="Day" name='day'>
+        <br>
+        <input class="form-control" placeholder="Height" name='height'>
+        <br>
+        <input class="form-control" placeholder="Weight" name='weight'>
+        <br>
+        <br>
+        <input type="submit" name="submit" value="Submit" class="btn btn-success btn-lg btn-block">
+      </form>
+    </form>
+  </div>
+</body>
+
+
+{% endblock %}

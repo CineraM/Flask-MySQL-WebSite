@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}
+Gym Members
+{% endblock %}
+
+{% block content %}
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <!-- Your Columns HERE -->
+      <th scope="col">Username</th>
+      <th scope="col">Password</th>
+      <th scope="col">Firstname</th>
+      <th scope="col">Lastname</th>
+      <th scope="col">DOB</th>
+      <th scope="col">Height</th>
+      <th scope="col">Weight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Your rows inside the table HERE: -->
+    {% for member in results %}
+    <tr>
+      <td>{{ member[0] }}</td>
+      <td>{{ member[1] }}</td>
+      <td>{{ member[2] }}</td>
+      <td>{{ member[3] }}</td>
+      <td>{{ member[4] }}</td>
+      <td>{{ member[5] }}</td>
+      <td>{{ member[6] }}</td>
+      <td>
+        <button class="btn btn-outline btn-danger">Delete</button>
+        <button class="btn btn-outline btn-info">Update Info</button>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
