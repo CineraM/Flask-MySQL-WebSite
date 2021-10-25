@@ -6,8 +6,8 @@ The goal of this project is to implement an enterprise information system. The s
 
 
 Porgramming languages used: Python, Html  
-Frameworks: Flask, SQL_commands (python sql compatibility library), MySql
-Technology Enviroments: PopSQL(DataBase Manager), IDE's (ATOM & VS Code)
+Frameworks: Flask, SQL_commands (python sql compatibility library), MySql  
+Technology Enviroments: PopSQL(DataBase Manager), IDE's (ATOM & VS Code)  
 
 Sample(Not Final Version):  
 Reisgtering as a member:  
