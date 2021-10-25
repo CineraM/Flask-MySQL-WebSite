@@ -5,7 +5,7 @@ Project Summary:
 The goal of this project is to implement an enterprise information system. The system we had in mind will be defined by the following EER Diagram and Relational Schema. Our design represents a system in which Trainers register to teach different exercise Classes that Members can register to participate in.
 
 
-Porgramming languages used: Python, Html
+Porgramming languages used: Python, Html  
 Frameworks: Flask, SQL_commands (python sql compatibility library), MySql
 Technology Enviroments: PopSQL(DataBase Manager), IDE's (ATOM & VS Code)
 
