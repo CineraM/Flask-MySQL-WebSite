@@ -10,6 +10,12 @@ def home_page():
     return render_template('home.html')
 
 
+@app.route('/trainer')  # display all members root
+def trainers():
+    trainer = sql_commands.get_trainers()
+    return render_template('trainer.html', results=trainer)
+
+
 @app.route('/member')  # display all members root
 def members():
     members = sql_commands.get_members()
@@ -37,6 +43,12 @@ def register_member():
         return redirect(url_for('members'))  # references name of function ^
 
     return render_template('register_member.html')
+
+
+@app.route('/delete/<string:username>', methods=['GET', 'POST'])
+def delete(username):
+    sql_commands.delete_member(username)
+    return redirect(url_for('members'))
 
 
 if __name__ == '__main__':

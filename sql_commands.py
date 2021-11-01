@@ -18,6 +18,12 @@ def get_members():  # Returns a list, flask formats it into the html
     return data
 
 
+def get_trainers():
+    mycursor.execute('SELECT * FROM trainer;')
+    data = mycursor.fetchall()
+    return data
+
+
 def create_member(username, password, firstname, lastname, year, month, day, height, weight):
     date = datetime(year, month, day)
     # date has to be passed in this format
@@ -35,3 +41,9 @@ def create_member(username, password, firstname, lastname, year, month, day, hei
     mycursor.execute(sql, val)
     mydb.commit()  # execute and commit to the database
 # we will probably need to add a try and catch for input validation
+
+
+def delete_member(user):
+    sql = f"DELETE FROM member WHERE username = '{user}' "
+    mycursor.execute(sql)
+    mydb.commit()
