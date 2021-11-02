@@ -17,9 +17,13 @@ def get_members():  # Returns a list, flask formats it into the html
     data = mycursor.fetchall()
     return data
 
-
 def get_trainers():
     mycursor.execute('SELECT * FROM trainer;')
+    data = mycursor.fetchall()
+    return data
+
+def get_classes():
+    mycursor.execute('SELECT * FROM class;')
     data = mycursor.fetchall()
     return data
 

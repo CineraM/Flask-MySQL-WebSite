@@ -10,7 +10,13 @@ def home_page():
     return render_template('home.html')
 
 
-@app.route('/trainer')  # display all members root
+
+@app.route('/trainer')  # display all trainers root
+def classes():
+    clas = sql_commands.get_classes()
+    return render_template('class.html', results=clas)
+
+@app.route('/trainer')  # display all trainers root
 def trainers():
     trainer = sql_commands.get_trainers()
     return render_template('trainer.html', results=trainer)
