@@ -1,31 +1,45 @@
 from flask import Flask, render_template, url_for, request, redirect
 import sql_commands
 
+from datetime import datetime
+
 app = Flask(__name__)
 
 
 @app.route('/')
-@app.route('/home')  # home root
+@app.route('/home')     # home root
 def home_page():
     return render_template('home.html')
 
 
+@app.route('/member', methods=['GET', 'POST'])  # display all members root
+def members():
+    q = request.args.get('q')                   # search bar implementation
+    if q:
+        members = sql_commands.query_member(q)
+    else:
+        members = sql_commands.get_members()
+    return render_template('member.html', results=members)
 
-@app.route('/trainer')  # display all trainers root
-def classes():
-    clas = sql_commands.get_classes()
-    return render_template('class.html', results=clas)
 
-@app.route('/trainer')  # display all trainers root
+@app.route('/trainer', methods=['GET', 'POST'])  # display all trainers root
 def trainers():
-    trainer = sql_commands.get_trainers()
+    q = request.args.get('q')
+    if q:
+        trainer = sql_commands.query_trainer(q)
+    else:
+        trainer = sql_commands.get_trainers()
     return render_template('trainer.html', results=trainer)
 
 
-@app.route('/member')  # display all members root
-def members():
-    members = sql_commands.get_members()
-    return render_template('member.html', results=members)
+@app.route('/classes', methods=['GET', 'POST'])  # display all trainers root
+def classes():
+    q = request.args.get('q')                   # search bar implementation
+    if q:
+        clas = sql_commands.query_class(q)
+    else:
+        clas = sql_commands.get_classes()
+    return render_template('class.html', results=clas)
 
 
 # member registration loop
@@ -36,11 +50,15 @@ def register_member():
         password = request.form['password']
         firstname = request.form['firstname']
         lastname = request.form['lastname']
+
+        date_input = datetime.strptime(
+            request.form['dinput'], '%Y-%m-%d')
         # date time function needs integers to work
-        year = int(request.form['year'])
-        month = int(request.form['month'])
-        day = int(request.form['day'])
-        # date time function needs integers to work
+        # get the ints from the date time function
+        year = int(date_input.year)
+        month = int(date_input.month)
+        day = int(date_input.day)
+
         height = request.form['height']
         weight = request.form['weight']
 

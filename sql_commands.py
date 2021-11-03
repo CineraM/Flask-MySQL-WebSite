@@ -12,18 +12,41 @@ mydb = mysql.connector.connect(
 mycursor = mydb.cursor()
 
 
-def get_members():  # Returns a list, flask formats it into the html
+def get_members():           # Returns a list with all the members, flask formats it into the html
     mycursor.execute('SELECT * FROM member;')
     data = mycursor.fetchall()
     return data
 
-def get_trainers():
+
+def query_member(q_member):  # Query used in the serch bar of the members page
+    mycursor.execute(
+        f"SELECT * FROM member WHERE firstname LIKE '{q_member}%';")
+    data = mycursor.fetchall()
+    return data
+
+
+def get_trainers():         # Returns a list with all the trainers
     mycursor.execute('SELECT * FROM trainer;')
     data = mycursor.fetchall()
     return data
 
-def get_classes():
+
+def query_trainer(q_trainer):  # Query used in the serch bar of the trainers page
+    mycursor.execute(
+        f"SELECT * FROM trainer WHERE firstname LIKE '{q_trainer}%';")
+    data = mycursor.fetchall()
+    return data
+
+
+def get_classes():          # Returns a list with all the classes
     mycursor.execute('SELECT * FROM class;')
+    data = mycursor.fetchall()
+    return data
+
+
+def query_class(q_class):  # Query used in the serch bar of the classes page
+    mycursor.execute(
+        f"SELECT * FROM class WHERE name LIKE '{q_class}%';")
     data = mycursor.fetchall()
     return data
 
