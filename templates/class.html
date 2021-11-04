@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}
+Classes
+{% endblock %}
+
+{% block content %}
+<form class="form-register" style="color:white" method="GET">
+  <input class="form-control mr-sm-2" type="search" placeholder="Search by Class Name" name="q">
+  <button class="btn btn-outline-success my-2 my-0" type="submit" name="search">Search</button>
+  <button class="btn btn-outline-success my-2 my-0" type="submit" name="reset" href="index{{url_for('classes')}}">Reset</button>
+</form>
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <!-- Your Columns HERE -->
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Spots Left</th>
+      <th scope="col">Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Your rows inside the table HERE: -->
+    {% for clas in results %}
+    <tr>
+      <td>{{ clas[1] }}</td>
+      <td>{{ clas[2] }}</td>
+      <td>{{ clas[3] }}</td>
+      <td>{{ clas[4] }}</td>
+      <td>
+      <td>
+      <button class="btn btn-outline btn-info">Something ? </button>
+      <button class="btn btn-outline btn-success">Something ? </button>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}
+Gym Members
+{% endblock %}
+
+{% block content %}
+<form class="form-register" style="color:white" method="GET">
+  <input class="form-control mr-sm-2" type="search" placeholder="Search by Name" name="q">
+  <button class="btn btn-outline-success my-2 my-0" type="submit" name="search">Search</button>
+  <button class="btn btn-outline-success my-2 my-0" type="submit" name="reset" href="index{{url_for('members')}}">Reset</button>
+</form>
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <!-- Your Columns HERE -->
+      <th scope="col">Username</th>
+      <th scope="col">Password</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">DOB</th>
+      <th scope="col">Height</th>
+      <th scope="col">Weight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Your rows inside the table HERE: -->
+    {% for member in results %}
+    <tr>
+      <td>{{ member[0] }}</td>
+      <td>{{ member[1] }}</td>
+      <td>{{ member[2] }}</td>
+      <td>{{ member[3] }}</td>
+      <td>{{ member[4] }}</td>
+      <td>{{ member[5] }}</td>
+      <td>{{ member[6] }}</td>
+      <td>
+    <a href="/delete/{{member[0]}}">
+  <input type="submit" name="delete" value="Delete Member" class='btn btn-outline btn-danger' style="float: right; margin:5px;">
+    </a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Register as a Member
+{% endblock %}
+
+{% block content %}
+
+<body class="text-center">
+  <br>
+  <div class="container">
+    <form class="form-register" style="color:white" method="post">
+      <img class="rounded-circle"
+        src="https://icons-for-free.com/iconfiles/png/512/fitness+gym+gymnasium+icon-1320168052118785594.png"
+        alt="">
+      <h1 class="h1 mb-3 font-weight-normal">
+        Register as a Member
+      </h1>
+      <br>
+      <form class="form-register" style="color:white" action="users.html" method="post">
+        <input class="form-control" placeholder="User name" name='username'>
+        <br>
+        <input class="form-control" placeholder="Password" name='password'>
+        <br>
+        <input class="form-control" placeholder="First Name" name='firstname'>
+        <br>
+        <input class="form-control" placeholder="Last Name" name='lastname'>
+        <br>
+        <input class="form-control" placeholder="Height" name='height'>
+        <br>
+        <input class="form-control" placeholder="Weight" name='weight'>
+        <br>
+        <h5 for="data-dob" >Enter your DOB:</h5>
+        <input type="date" id="dinput" name="dinput" class="input"
+        format="dd/mm/yyyy" placeholder="DD-MM-YYYY">
+        <br>
+        <br>
+
+        <input type="submit" name="submit" value="Submit" class="btn btn-success btn-lg btn-block">
+      </form>
+    </form>
+  </div>
+</body>
+
+
+{% endblock %}
