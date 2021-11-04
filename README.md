@@ -1,4 +1,4 @@
-# COP4710 Final Project Fall 2021  
+# Data Base Design Final Project Fall 2021  
 Members: Devin Parmet, Keylin Sanchez, Matias Cinera   
 
 Project Summary:   
