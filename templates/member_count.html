@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}
+COVID Awareness
+{% endblock %}
+
+{% block content %}
+<p></p>
+<p class="lead font-weight-normal" style="color:white;">In order to be COVID Safe, you can view the number of members that are currently registered for each class!!</p>
+<center><p class="lead font-weight-normal" style="color:cyan;">**We strongly encourage the use of masks for all Members and Trainers**</p></center>
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <!-- Your Columns HERE -->
+      <th scope="col">Class</th>
+      <th scope="col">Time</th>
+      <th scope="col">Number of Members Registered</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for class in results %}
+    <tr>
+      <td>{{ class[0] }}</td>
+      <td>{{ class[2] }}</td>
+      <td>{{ class[1] }}</td>
+      <td>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

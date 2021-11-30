@@ -1,20 +1,25 @@
 {% extends 'base.html' %}
 {% block title %}
-Home Page
+PWR Zone
 {% endblock %}
 
 {% block content %}
+
 <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-dark" style="color:white">
-    <div style="background-image: url('https://c.tenor.com/OTSZdwWVFrMAAAAd/killer-bean-dance.gif');">
+    <div style="background-image: url('https://wallpaperaccess.com/full/1087589.jpg');">
     <div class="col-md-5 p-lg-5 mx-auto my-5">
-        <h1 class="display-4 font-weight-normal">Cool Gym Name</h1>
-        <p class="lead font-weight-normal">some inspiring catch phrase or something idk</p>
-        <p class="lead font-weight-normal">More dishes more bishes </p>
-        <p class="lead font-weight-normal">no paint no grain B) </p>
-        <a class="btn btn-primary" href="">Begin you Fitness Journey</a>
+        <h1 class="display-4 font-weight-bold" style="color:white;">PWR Fit</h1>
+        <p class="lead font-weight-bold" style="color:white;">You have it in you. Now its time to unleash it</p>
+
+        {%if "user" in session%}
+          <a class="btn btn-primary" href="{{url_for('schedule')}}">See Your Schedule</a>
+        {% elif "admin" in session %}
+          <a class="btn btn-primary" href="{{url_for('schedule')}}">See Your Schedule</a>
+        {% else %}
+          <a class="btn btn-primary" href="{{url_for('register_member')}}">Begin you Fitness Journey</a>
+        {%endif%}
     </div>
     <div class="product-device box-shadow d-none d-md-block"></div>
     <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
 </div>
-
 {% endblock %}

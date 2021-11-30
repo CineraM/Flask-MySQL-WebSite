@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block content %}
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {%if messages %}
+      {% for category, msg in messages%}
+          <div class="alert alert-{{category}}">
+            <button type="button" class="m1-2 mb-1 close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            {{msg}}
+            </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith  %}
+<body class="text-center">
+  <br>
+  <div class="container">
+    <form class="form-register" style="color:white" method="post">
+      <img class="rounded-circle"
+        src="https://icons-for-free.com/iconfiles/png/512/fitness+gym+gymnasium+icon-1320168052118785594.png"
+        alt="">
+      <h1 class="h1 mb-3 font-weight-normal">
+        Login
+      </h1>
+      <br>
+      <form class="form-register" style="color:white" action="login.html" method="post">
+        <input class="form-control" placeholder="Username" name='username'>
+        <br>
+        <input class="form-control" placeholder="Password" type="password" name='password'>
+        <br>
+        <br>
+        <input type="submit" name="login" value="login"  class="btn btn-success btn-lg btn-block">
+      </form>
+    </form>
+  </div>
+</body>
+
+
+{% endblock %}

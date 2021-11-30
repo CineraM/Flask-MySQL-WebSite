@@ -31,8 +31,9 @@ Trainers
       <td>{{ trainer[4] }}</td>
       <td>
       <td>
-      <button class="btn btn-outline btn-info">Something ? </button>
-      <button class="btn btn-outline btn-success">Something ? </button>
+        <a href="/delete_trainer/{{trainer[0]}}">
+      <input type="submit" name="delete" value="Delete Trainer" class='btn btn-outline btn-danger' style="float: right; margin:5px;">
+        </a>
       </td>
     </tr>
     {% endfor %}

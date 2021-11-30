@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Register as a Member
+Register as a Trainer
 {% endblock %}
 
 {% block content %}
@@ -27,9 +27,9 @@ Register as a Member
         src="https://pbs.twimg.com/profile_images/1284889585135190016/bpa8tq0k_400x400.jpg"
         alt="">
       <h1 class="h1 mb-3 font-weight-normal">
-        Register as a Member
+        Register as a Trainer
       </h1>
-      <a class="btn btn-outline-success my-2 my-0" href="{{url_for('register_trainer')}}">Register as a trainer?</a>
+      <br>
       <form class="form-register" style="color:white" action="users.html" method="post">
         <input class="form-control" placeholder="Username" name='username'>
         <br>
@@ -38,10 +38,6 @@ Register as a Member
         <input class="form-control" placeholder="First Name" name='firstname'>
         <br>
         <input class="form-control" placeholder="Last Name" name='lastname'>
-        <br>
-        <input class="form-control" placeholder="Height" name='height'>
-        <br>
-        <input class="form-control" placeholder="Weight" name='weight'>
         <br>
         <h5 for="data-dob" >Enter your DOB:</h5>
         <input type="date" id="dinput" name="dinput" class="input"

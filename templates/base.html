@@ -22,23 +22,55 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mr-auto">
+        {%if "user" in session%}
         <li class="nav-item active">
-          <a class="nav-link" href="{{url_for('members')}}">Members <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="{{url_for('trainers')}}">Trainers <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{{url_for('schedule')}}">Your Schedule <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="{{url_for('classes')}}">Classes <span class="sr-only">(current)</span></a>
         </li>
+        {% elif "admin" in session %}
+        <li class="nav-item active">
+          <a class="nav-link" href="{{url_for('schedule')}}">Your Schedule <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{url_for('classes')}}">Classes <span class="sr-only">(current)</span></a>
+        </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{{url_for('members')}}">Members <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{{url_for('trainers')}}">Trainers <span class="sr-only">(current)</span></a>
+          </li>
+        {%endif%}
+        <li class="nav-item active">
+          <a class="nav-link" href="{{url_for('member_count')}}">COVID Awareness <span class="sr-only">(current)</span></a>
+        </li>
       </ul>
       <ul class="navbar-nav">
+        {%if "user" in session%}
         <li class="nav-item">
-          <a class="nav-link" href="#">Login</a>
-        </li>
+              <a class="nav-link">
+                <strong style="color:green;">Welcome, {{session["name"] }}</strong></a>
+            </li>
+            <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+        {% elif "admin" in session %}
         <li class="nav-item">
-          <a class="nav-link" href="{{url_for('register_member')}}">Register</a>
-        </li>
+              <a class="nav-link">
+                <strong style="color:green;">Trainer: {{session["name"] }}</strong></a>
+            </li>
+            <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('register_member')}}">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('login')}}">Login</a>
+          </li>
+          <li class="nav-item">
+          </li>
+        {%endif%}
+
       </ul>
     </div>
   </nav>

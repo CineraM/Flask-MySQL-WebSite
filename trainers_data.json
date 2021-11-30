@@ -1,0 +1,30 @@
+[
+  {
+    "username": "MyersMichael",
+    "password": "HappyHalloween21!",
+    "firstname": "Michael",
+    "lastname": "Myers",
+    "dob": "1996-06-17"
+  },
+  {
+    "username": "youll_float_2",
+    "password": "SpookyClown123!",
+    "firstname": "Penny",
+    "lastname": "Wise",
+    "dob": "1998-12-04"
+  },
+  {
+    "username": "DatStreetBoi",
+    "password": "Nightm@re31m",
+    "firstname": "Freddy",
+    "lastname": "Krueger",
+    "dob": "2000-01-21"
+  },
+  {
+    "username": "",
+    "password": "",
+    "firstname": "",
+    "lastname": "",
+    "dob": ""
+  }
+]
