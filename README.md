@@ -28,7 +28,7 @@
      set DEBUG_MODE=1
      flask run
 #### The terminal should then output the address where the webapp is running.
-## Running examples
+## Running examples  (front-end implemented with Bootstapt/html)
 ### Registering as a trainer:
 ![image-20211122-080136](https://user-images.githubusercontent.com/66031870/142877954-4cc6344d-ec38-451f-a819-52796ffeaa04.png)
 ### Displaying all members: 
