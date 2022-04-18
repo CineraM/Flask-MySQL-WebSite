@@ -4,6 +4,7 @@
 #### The front-end of this project was developed using Flask with Python. The DBMS used was MySQL. Mock data created using Mockaroo.
 #### Technology Enviroments: PopSQL(DataBase Manager), IDE's (ATOM & VS Code). Story tracking done using Jira.
 ## Application Structure
+```
      .
      |--__pycache__/
      |--templates/
@@ -12,6 +13,7 @@
      |--***JSON files for class, member, and trainer data*** 
      |--***SQL Command files***
      |--***README file***
+```
 ## How to run
 #### MySQL and Flask with Python needed.
 #### Run the following commands for setup:
